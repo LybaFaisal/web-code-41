@@ -1,0 +1,74 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0;
+}
+
+.navigation {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: #212532;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: width 0.5s, height 0.5s;
+}
+
+.navigation.active {
+    width: 200px;
+    height: 200px;
+}
+
+.dot {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.navigation.active .dot {
+    opacity: 1;
+}
+
+/* Directions */
+.dot:nth-child(1) { transform: translate(-50%, -50%); }
+.dot:nth-child(2) { transform: translate(0, -50%); }
+.dot:nth-child(3) { transform: translate(50%, -50%); }
+
+.dot:nth-child(4) { transform: translate(-50%, 0); }
+.dot:nth-child(5) { transform: translate(0, 0); } /* Center */
+.dot:nth-child(6) { transform: translate(50%, 0); }
+
+.dot:nth-child(7) { transform: translate(-50%, 50%); }
+.dot:nth-child(8) { transform: translate(0, 50%); }
+.dot:nth-child(9) { transform: translate(50%, 50%); }
+
+.navigation.active .dot:nth-child(1) { transform: translate(-80px, -80px); }
+.navigation.active .dot:nth-child(2) { transform: translate(0, -80px); }
+.navigation.active .dot:nth-child(3) { transform: translate(80px, -80px); }
+
+.navigation.active .dot:nth-child(4) { transform: translate(-80px, 0); }
+.navigation.active .dot:nth-child(5) { transform: translate(0, 0); }
+.navigation.active .dot:nth-child(6) { transform: translate(80px, 0); }
+
+.navigation.active .dot:nth-child(7) { transform: translate(-80px, 80px); }
+.navigation.active .dot:nth-child(8) { transform: translate(0, 80px); }
+.navigation.active .dot:nth-child(9) { transform: translate(80px, 80px); }
+
+.dot ion-icon {
+    font-size: 20px;
+}
